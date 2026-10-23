@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.Lumenkin" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/lumen_primary</item>
+        <item name="colorPrimaryContainer">@color/lumen_primary_container</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="android:statusBarColor">@color/lumen_background</item>
+        <item name="android:navigationBarColor">@color/lumen_background</item>
+        <item name="android:windowBackground">@color/lumen_background</item>
+    </style>
+</resources>

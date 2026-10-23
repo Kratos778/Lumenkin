@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="lumen_primary">#FF6B9DFF</color>
+    <color name="lumen_primary_container">#FF1A237E</color>
+    <color name="lumen_background">#FF0D1117</color>
+    <color name="lumen_surface">#FF161B22</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="black">#FF000000</color>
+</resources>

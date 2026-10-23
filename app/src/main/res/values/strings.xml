@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Lumenkin</string>
+    <string name="wallpaper_name">Lumenkin Live Wallpaper</string>
+    <string name="wallpaper_description">Papel de parede animado fluido e otimizado para baixo consumo de recursos.</string>
+    <string name="select_video">Selecionar Vídeo</string>
+    <string name="apply_wallpaper">Aplicar como Wallpaper</string>
+    <string name="sound_enabled">Som ativado</string>
+    <string name="sound_disabled">Som desativado (padrão)</string>
+    <string name="processing">A processar vídeo…</string>
+    <string name="success">Wallpaper aplicado com sucesso!</string>
+    <string name="error_generic">Ocorreu um erro. Tenta novamente.</string>
+</resources>
