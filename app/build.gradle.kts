@@ -4,15 +4,18 @@ plugins {
 }
 
 android {
-    namespace = "com.lumenkin"
+    namespace = "com.elizierdias.lumenkin"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.lumenkin"
+        applicationId = "com.elizierdias.lumenkin"
         minSdk = 24
         targetSdk = 35
-        versionCode = 2
-        versionName = "1.0.1"
+        versionCode = 3
+        versionName = "1.0.2"
+
+        // Nome fixo do APK em todos os builds (debug/release)
+        setProperty("archivesBaseName", "Lumenkin")
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -43,6 +46,14 @@ android {
     buildFeatures {
         viewBinding = true
     }
+
+    // Garante nome de ficheiro estável: Lumenkin-debug.apk / Lumenkin-release.apk
+    applicationVariants.configureEach {
+        outputs.configureEach {
+            val output = this as com.android.build.gradle.internal.api.BaseVariantOutputImpl
+            output.outputFileName = "Lumenkin.apk"
+        }
+    }
 }
 
 dependencies {
@@ -51,8 +62,6 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
-
-    // Coroutines (lifecycleScope + Dispatchers)
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.9.0")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.8.7")
 }
