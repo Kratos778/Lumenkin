@@ -11,6 +11,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
+    env:
+      ANDROID_HOME: /usr/local/lib/android/sdk
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -26,11 +29,17 @@ jobs:
         with:
           gradle-version: '8.9'
 
-      - name: Setup Android SDK
-        uses: android-actions/setup-android@v3
-        with:
-          packages: 'platform-tools platforms;android-35 build-tools;35.0.0'
-          accept-android-sdk-licenses: true
+      - name: Accept Android licenses & install packages
+        run: |
+          # Locate sdkmanager
+          SDKMANAGER=$(find $ANDROID_HOME -name sdkmanager | head -1)
+          echo "Using sdkmanager: $SDKMANAGER"
+
+          # Accept all licenses non-interactively
+          yes | $SDKMANAGER --licenses >/dev/null 2>&1 || true
+
+          # Install only what we need (no deprecated 'tools' package)
+          $SDKMANAGER "platform-tools" "platforms;android-35" "build-tools;35.0.0"
 
       - name: Build Debug APK
         run: gradle assembleDebug --stacktrace --no-daemon
